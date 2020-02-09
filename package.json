@@ -1,0 +1,23 @@
+{
+  "name": "interviewassignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sydneydou/freightera-assignment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sydneydou/freightera-assignment/issues"
+  },
+  "homepage": "https://github.com/sydneydou/freightera-assignment#readme",
+  "dependencies": {
+    "jquery-ui": "^1.12.1",
+    "jquery.autocomplete": "^1.2.0"
+  }
+}

@@ -1,3 +1,9 @@
+<!-- Goal #1: complete assigned tasks
+
+ Stretch goal: make it really pretty
+
+ stretch goal: make it mobile responsive -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,7 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <title></title>
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <title>Freightera Assignment</title>
   </head>
   <body>
     <img
@@ -13,6 +23,17 @@
       src="assets/images/freightera_owler_20190419_214212_original.jpg"
       class="freightera-logo"
     />
+    <form autocomplete="off" action="/action_page.php">
+      <section class="search-container">
+        <input id="search-input" type="text" placeholder="Where we ship" />
+        <button id="search">Search</button>
+      </section>
+    </form>
+
+    <table style="width:100%" class="table">
+      <tr id="table-heading"></tr>
+      <tr id="table-value"></tr>
+    </table>
   </body>
   <script
     src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -20,4 +41,5 @@
     crossorigin="anonymous"
   ></script>
   <script src="index.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </html>
