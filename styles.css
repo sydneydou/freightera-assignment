@@ -1,29 +1,21 @@
+body {
+  height: 100vh;
+}
 .freightera-logo {
   height: 3em;
   padding-top: 1em;
 }
 .search-container {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15em;
 }
-
-.autocomplete-items {
-  position: absolute;
-  border: 1px solid #d4d4d4;
-  border-bottom: none;
-  border-top: none;
-  z-index: 99;
-  /*position the autocomplete items to be the same width as the container:*/
-  top: 100%;
-  left: 0;
-  right: 0;
+.search-input {
+  width: 55em;
+  height: 4em;
+  border-radius: 30%;
 }
-.autocomplete-items div:hover {
-  /*when hovering an item:*/
-  background-color: #e9e9e9;
-}
-
-.autocomplete-active {
-  /*when navigating through the items using the arrow keys:*/
-  background-color: DodgerBlue !important;
-  color: #ffffff;
+.title {
+  text-transform: capitalize;
 }

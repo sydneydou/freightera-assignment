@@ -1,9 +1,11 @@
-<!-- Goal #1: complete assigned tasks
+<!-- 
+- Simple search page - done
+- Connects to API -done
+- Live feedback ,auto filled search bar
+- Display data in a table -done
+- Provide hyperlink to google search each city returned
 
- Stretch goal: make it really pretty
-
- stretch goal: make it mobile responsive -->
-
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,6 +17,11 @@
       rel="stylesheet"
       href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
     />
+    <link
+      rel="stylesheet"
+      href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css"
+    />
+
     <title>Freightera Assignment</title>
   </head>
   <body>
@@ -23,12 +30,16 @@
       src="assets/images/freightera_owler_20190419_214212_original.jpg"
       class="freightera-logo"
     />
-    <form autocomplete="off" action="/action_page.php">
-      <section class="search-container">
-        <input id="search-input" type="text" placeholder="Where we ship" />
-        <button id="search">Search</button>
-      </section>
-    </form>
+
+    <section class="search-container">
+      <input
+        class="search-input"
+        id="search-input"
+        type="text"
+        placeholder="Where we ship"
+      />
+      <button id="search">Search</button>
+    </section>
 
     <table style="width:100%" class="table">
       <tr id="table-heading"></tr>
@@ -40,6 +51,8 @@
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"
   ></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+  <script src="autocomplete.js"></script>
   <script src="index.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </html>
