@@ -10,6 +10,14 @@ $(document).ready(function() {
       for (let i = 0; i < data.length; i++) {
         let cityname = data[i].CityName + ", " + data[i].province;
         suggestedCity.push(cityname);
+        [
+          "popular",
+          "country_full",
+          "dif",
+          "per_dif",
+          "soundex",
+          "scale"
+        ].forEach(key => delete data[i][key]);
 
         $("#search-input")
           .autocomplete({
@@ -25,9 +33,6 @@ $(document).ready(function() {
           .focus(function() {
             $(this).autocomplete("search", $(this).val());
           });
-        [
-          ("popular", "country_full", "dif", "per_dif", "soundex", "scale")
-        ].forEach(key => delete data[i][key]);
       }
 
       $("#search").on("click", function() {
