@@ -11,10 +11,14 @@ $(document).ready(function() {
         let cityname = data[i].CityName;
         suggestedCity.push(cityname);
 
-        // console.log(data[i]);
-
-        delete data[i].popular;
-        delete data[i].country_full;
+        [
+          "popular",
+          "country_full",
+          "dif",
+          "per_dif",
+          "soundex",
+          "scale"
+        ].forEach(key => delete data[i][key]);
       }
 
       console.log(suggestedCity);
@@ -35,9 +39,11 @@ $(document).ready(function() {
         $("#table-heading").empty();
         $("#table-value").empty();
         console.log(data);
+        for (let i = 0; i < data.length; i++) {
+          console.log(data[i]);
+        }
         $.each(data[0], (key, value) => {
           let titles = key.replace("CityName", "City Name");
-
           $("#table-heading").append(`<th class='title'>${titles}</th>`);
           $("#table-value").append(`<td>${value}</td>`);
         });
