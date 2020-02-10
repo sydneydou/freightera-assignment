@@ -20,11 +20,14 @@ $(document).ready(function() {
               $("#search-input").val(ui.item.value);
 
               selectInput = $("#search-input").val();
+              console.log(selectInput);
             }
           })
           .focus(function() {
             $(this).autocomplete("search", $(this).val());
+            console.log($(this).val());
           });
+
         [
           ("popular", "country_full", "dif", "per_dif", "soundex", "scale")
         ].forEach(key => delete data[i][key]);
@@ -32,16 +35,22 @@ $(document).ready(function() {
 
       $("#search").on("click", function() {
         event.preventDefault();
-        let obj;
 
+        console.log(selectInput);
         if (selectInput) {
           let splt = selectInput.split(",");
-          obj = data.find(obj => obj.CityName == splt[0]);
+          console.log(splt);
+          console.log(data);
+
+          let obj = data.find(obj => obj.CityName == splt[0]);
+          console.log(obj);
         }
+
         $("#table-heading").empty();
         $("#table-value").empty();
 
         $(".search-container ").addClass("show-table");
+
         $.each(obj || data[0], (key, value) => {
           let titles = key.replace("CityName", "City Name");
 
