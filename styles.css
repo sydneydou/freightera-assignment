@@ -9,7 +9,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 15em;
+  margin-top: 17em;
+  padding-bottom: 4em;
 }
 .search-input {
   width: 55em;
@@ -18,4 +19,11 @@ body {
 }
 .title {
   text-transform: capitalize;
+  font-size: 2em;
+  padding-bottom: 2em;
+}
+
+.show-table {
+  margin-top: 5em;
+  transition: 0.8s;
 }
