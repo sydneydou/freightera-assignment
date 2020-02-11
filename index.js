@@ -19,6 +19,11 @@ $(document).ready(function() {
           "scale"
         ].forEach(key => delete data[i][key]);
 
+        let hyperlinkCity = data[i].CityName;
+        data[i][
+          "hyperlink"
+        ] = `<a href='https://www.google.com/search?q=${hyperlinkCity}'>Click Here</a>`;
+
         $("#search-input")
           .autocomplete({
             source: suggestedCity,
@@ -37,18 +42,24 @@ $(document).ready(function() {
 
       $("#search").on("click", function() {
         event.preventDefault();
+
         let obj;
 
         if (selectInput) {
-          let splt = selectInput.split(",");
-          obj = data.find(obj => obj.CityName == splt[0]);
+          let splt = selectInput.split(", ");
+          obj = data.find(
+            obj => obj.CityName == splt[0] && obj.province == splt[1]
+          );
         }
         $("#table-heading").empty();
         $("#table-value").empty();
 
         $(".search-container ").addClass("show-table");
+
         $.each(obj || data[0], (key, value) => {
           let titles = key.replace("CityName", "City Name");
+
+          //maybe add, did you mean data[1]?
 
           $("#table-heading").append(`<th class='title'>${titles}</th>`);
           $("#table-value").append(`<td>${value}</td>`);
