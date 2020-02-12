@@ -1,4 +1,8 @@
 $(document).ready(function() {
+  $("#search").on("click", function() {
+    $("input").removeClass("hidden", 1000);
+    $("#search").addClass("active-search", 1000);
+  });
   $("#search-input").on("keypress", function() {
     let searchInput = $("#search-input").val();
     $.ajax({
@@ -29,6 +33,7 @@ $(document).ready(function() {
             source: suggestedCity,
             autoFocus: true,
             dataType: "json",
+            minLength: 1,
             select: function(event, ui) {
               $("#search-input").val(ui.item.value);
 
@@ -53,8 +58,7 @@ $(document).ready(function() {
         }
         $("#table-heading").empty();
         $("#table-value").empty();
-
-        $(".search-container ").addClass("show-table");
+        $(".input-section").addClass("active-table", 1000);
 
         $.each(obj || data[0], (key, value) => {
           let titles = key.replace("CityName", "City Name");
@@ -63,6 +67,7 @@ $(document).ready(function() {
 
           $("#table-heading").append(`<th class='title'>${titles}</th>`);
           $("#table-value").append(`<td>${value}</td>`);
+          $(".search-container ").addClass("show-table");
         });
         $("#search-input").val(" ");
       });

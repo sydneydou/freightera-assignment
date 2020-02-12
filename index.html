@@ -18,13 +18,16 @@
       href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
     />
     <link
-      rel="stylesheet"
-      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-    />
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous"
+  />
 
     <title>Freightera Assignment</title>
   </head>
   <body>
+    <section class="input-section">
     <img
       alt="Freightera Logo"
       src="assets/images/freightera_owler_20190419_214212_original.jpg"
@@ -32,14 +35,22 @@
     />
 
     <section class="search-container ">
+      <div class="inner-container">
+          
       <input
-        class="search-input"
+        class="search-input hidden"
         id="search-input"
         type="text"
         placeholder="Where we ship"
         autocomplete="on"
-      />
-      <button id="search">Search</button>
+      >
+
+   
+    </input>
+    <i class="fas fa-search-location search" id="search"></i>
+    
+  </div>
+</section>
     </section>
 
     <table style="width:100%" class="table">

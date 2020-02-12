@@ -1,5 +1,11 @@
 body {
   height: 100vh;
+  margin: 0;
+}
+
+.input-section {
+  background: linear-gradient(to right top, #0066a4, #0e81bc);
+  height: 100%;
 }
 .freightera-logo {
   height: 3em;
@@ -13,9 +19,8 @@ body {
   padding-bottom: 4em;
 }
 .search-input {
-  width: 55em;
+  width: 100%;
   height: 4em;
-  border-radius: 30%;
 }
 .title {
   text-transform: capitalize;
@@ -26,4 +31,39 @@ body {
 .show-table {
   margin-top: 5em;
   transition: 0.8s;
+}
+
+.hidden {
+  width: 0em;
+  height: 0em;
+  border: white 0 solid;
+}
+
+.active-search {
+  position: absolute;
+  right: 5px;
+  top: 15px;
+  font-size: 2em !important;
+}
+/* i ::before {
+  font-size: 2em;
+} */
+
+.active-table {
+  height: 54%;
+}
+
+.search {
+  justify-content: center;
+  position: absolute;
+  font-size: 13em;
+}
+
+.inner-container {
+  width: 40%;
+  position: relative;
+  display: flex;
+  height: 4em;
+  align-items: center;
+  justify-content: center;
 }
