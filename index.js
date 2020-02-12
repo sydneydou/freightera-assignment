@@ -23,11 +23,6 @@ $(document).ready(function() {
           "scale"
         ].forEach(key => delete data[i][key]);
 
-        let hyperlinkCity = data[i].CityName;
-        data[i][
-          "hyperlink"
-        ] = `<a href='https://www.google.com/search?q=${hyperlinkCity}'>Click Here</a>`;
-
         $("#search-input")
           .autocomplete({
             source: suggestedCity,
@@ -56,20 +51,31 @@ $(document).ready(function() {
             obj => obj.CityName == splt[0] && obj.province == splt[1]
           );
         }
+
         $("#table-heading").empty();
         $("#table-value").empty();
         $("table").addClass("table");
         $(".input-section").addClass("active-table", 1000);
-
+        if (obj) {
+          let hyperlinkCity = obj.CityName;
+          obj[
+            "CityName"
+          ] = `<a class="value" href='https://www.google.com/search?q=${hyperlinkCity}'>${hyperlinkCity}</a>`;
+        } else if (data[0]) {
+          let hyperlinkCity = data[0].CityName;
+          data[0][
+            "CityName"
+          ] = `<a class="value" href='https://www.google.com/search?q=${hyperlinkCity}'>${hyperlinkCity}</a>`;
+        }
         $.each(obj || data[0], (key, value) => {
           let titles = key.replace("CityName", "City Name");
-
-          //maybe add, did you mean data[1]?
-
           $("#table-heading").append(`<th class='title'>${titles}</th>`);
-          $("#table-value").append(`<td>${value}</td>`);
+          $("#table-value").append(
+            `<td><div class="value">${value}</div></td>`
+          );
           $(".search-container ").addClass("show-table");
         });
+
         $("#search-input").val(" ");
       });
     });
