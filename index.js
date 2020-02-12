@@ -44,29 +44,30 @@ $(document).ready(function() {
         event.preventDefault();
 
         let obj;
-
+        let hyperlinkCity;
+        let hyperlinkProvince;
         if (selectInput) {
           let splt = selectInput.split(", ");
           obj = data.find(
             obj => obj.CityName == splt[0] && obj.province == splt[1]
           );
+        } else {
+          obj = data[0];
         }
 
         $("#table-heading").empty();
         $("#table-value").empty();
         $("table").addClass("table");
         $(".input-section").addClass("active-table", 1000);
+        console.log(obj);
         if (obj) {
-          let hyperlinkCity = obj.CityName;
+          hyperlinkCity = obj.CityName;
+          hyperlinkProvince = obj.province;
           obj[
             "CityName"
-          ] = `<a class="value" href='https://www.google.com/search?q=${hyperlinkCity}'>${hyperlinkCity}</a>`;
-        } else if (data[0]) {
-          let hyperlinkCity = data[0].CityName;
-          data[0][
-            "CityName"
-          ] = `<a class="value" href='https://www.google.com/search?q=${hyperlinkCity}'>${hyperlinkCity}</a>`;
+          ] = `<a class="value" href='https://www.google.com/search?q=${hyperlinkCity} ${hyperlinkProvince}'>${hyperlinkCity}</a>`;
         }
+
         $.each(obj || data[0], (key, value) => {
           let titles = key.replace("CityName", "City Name");
           $("#table-heading").append(`<th class='title'>${titles}</th>`);
