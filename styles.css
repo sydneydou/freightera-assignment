@@ -1,6 +1,7 @@
 body {
   height: 100vh;
   margin: 0;
+  font-family: "Open Sans", sans-serif;
 }
 
 .input-section {
@@ -24,8 +25,10 @@ body {
 }
 .title {
   text-transform: capitalize;
-  font-size: 2em;
-  padding-bottom: 2em;
+  font-size: 29px;
+  padding-bottom: 1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 .show-table {
@@ -66,4 +69,14 @@ body {
   height: 4em;
   align-items: center;
   justify-content: center;
+}
+
+.table {
+  justify-content: space-evenly;
+  margin: 2em;
+  border-radius: 8px;
+  display: flex;
+  border: 1px lightgrey solid;
+  margin-top: -50px;
+  background: white;
 }

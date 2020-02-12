@@ -58,6 +58,7 @@ $(document).ready(function() {
         }
         $("#table-heading").empty();
         $("#table-value").empty();
+        $("table").addClass("table");
         $(".input-section").addClass("active-table", 1000);
 
         $.each(obj || data[0], (key, value) => {
