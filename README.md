@@ -10,6 +10,8 @@ For this quick assignment, I was tasked with creating a simple search page, that
 - CSS
 - Javascript (JQuery)
 
+![alt text](assets/images/freightera-screenshot.png)
+
 ## Side Note
 
 This was an excellent challenge to execute over the past few days, and I thoroughly enjoyed this assignment as apart of the interviewing process at Freightera.
