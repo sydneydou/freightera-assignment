@@ -5,9 +5,10 @@ $(document).ready(function() {
   });
   $("#search-input").on("keypress", function() {
     let searchInput = $("#search-input").val();
+    let value = " " + searchInput;
     $.ajax({
       method: "GET",
-      url: "https://api.freightera.com/api/geolocation/" + searchInput
+      url: "https://api.freightera.com/api/geolocation/" + value
     }).done(function(data) {
       let suggestedCity = [];
       let selectInput;
@@ -59,13 +60,13 @@ $(document).ready(function() {
         $("#table-value").empty();
         $("table").addClass("table");
         $(".input-section").addClass("active-table", 1000);
-        console.log(obj);
+
         if (obj) {
           hyperlinkCity = obj.CityName;
           hyperlinkProvince = obj.province;
           obj[
             "CityName"
-          ] = `<a class="value" href='https://www.google.com/search?q=${hyperlinkCity} ${hyperlinkProvince}'>${hyperlinkCity}</a>`;
+          ] = `<a class="value" target="_blank" href='https://www.google.com/search?q=${hyperlinkCity} ${hyperlinkProvince}'>${hyperlinkCity}</a>`;
         }
 
         $.each(obj || data[0], (key, value) => {
@@ -74,16 +75,12 @@ $(document).ready(function() {
           $("#table-value").append(
             `<td><div class="value">${value}</div></td>`
           );
+
           $(".search-container ").addClass("show-table");
         });
 
-        $("#search-input").val(" ");
+        $("#search-input").val("");
       });
     });
   });
-  // .fail(() => {
-  //   $(".table").prepend(
-  //     "<p> Sorry, there was an error with your request </p>"
-  //   );
-  // });
 });

@@ -2,15 +2,16 @@ body {
   height: 100vh;
   margin: 0;
   font-family: "Open Sans", sans-serif;
+  background: linear-gradient(to right top, #43689c, #0e81bc);
 }
 
 .input-section {
-  background: linear-gradient(to right top, #0066a4, #0e81bc);
+  background: white;
   height: 100%;
 }
 .freightera-logo {
-  height: 3em;
-  padding-top: 1em;
+  height: 4em;
+  padding-top: 4em;
 }
 .search-container {
   display: flex;
@@ -21,7 +22,7 @@ body {
 }
 .search-input {
   width: 100%;
-  height: 4em;
+  height: 5em;
 }
 .title {
   text-transform: uppercase;
@@ -29,14 +30,34 @@ body {
   padding-bottom: 2em;
   padding-left: 0.5em;
   padding-right: 0.5em;
-  color: grey;
+  color: darkslategrey;
   padding-top: 0.5em;
   font-weight: 400;
 }
 
 .show-table {
-  margin-top: 5em;
+  margin-top: 6.5em;
   transition: 0.8s;
+}
+input::placeholder {
+  color: darkslategrey;
+  font-size: 18px;
+  font-weight: 600;
+  padding-left: 1em;
+}
+
+input[type="text"] {
+  color: rgb(24, 36, 36);
+  padding-left: 1em;
+  font-size: 18px;
+  font-weight: 600;
+}
+.ui-menu .ui-menu-item a {
+  color: darkslategrey;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: solid, 1px, grey;
+  padding: 6px;
 }
 
 .hidden {
@@ -52,13 +73,13 @@ body {
   font-size: 2em !important;
 }
 .active-table {
-  height: 54%;
+  height: 55%;
 }
 
 .search {
   justify-content: center;
   position: absolute;
-  color: darkgray;
+  color: darkslategrey;
   font-size: 13em;
 }
 
@@ -77,18 +98,33 @@ body {
   border-radius: 8px;
   display: flex;
   border: 1px lightgrey solid;
-  margin-top: -50px;
+  margin-top: -20px;
   background: white;
-  height: 20em;
+  height: 4em;
 }
 .result-container {
   position: absolute;
+}
+.table-value {
+  color: white;
 }
 
 .value {
   display: flex;
   justify-content: center;
   font-size: 22px;
-  text-decoration: none;
   text-transform: uppercase;
+}
+.img-container {
+  display: flex;
+  justify-content: center;
+}
+a:link {
+  color: greenyellow;
+}
+a:visited {
+  color: darkseagreen;
+}
+.fa-search-location:before {
+  padding-right: 12px;
 }

@@ -1,11 +1,3 @@
-<!-- 
-- Simple search page - done
-- Connects to API -done
-- Live feedback ,auto filled search bar
-- Display data in a table -done
-- Provide hyperlink to google search each city returned
-
--->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,44 +14,40 @@
     href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous"
-  />
-
+    />
     <title>Freightera Assignment</title>
   </head>
   <body>
     <section class="input-section">
-    <img
-      alt="Freightera Logo"
-      src="assets/images/freightera_owler_20190419_214212_original.jpg"
-      class="freightera-logo"
-    />
-
-    <section class="search-container ">
-      <div class="inner-container">
-          
-      <input
-        class="search-input hidden"
-        id="search-input"
-        type="text"
-        placeholder="Where we ship"
-        autocomplete="on"
-      >
-
-   
-    </input>
-    <i class="fas fa-search-location search" id="search"></i>
-    
-  </div>
-</section>
+      <div class="img-container">
+        <img
+          alt="Freightera Logo"
+          src="assets/images/freightera_owler_20190419_214212_original.jpg"
+          class="freightera-logo"
+        />
+      </div>
+        <section class="search-container ">
+          <div class="inner-container">      
+            <input
+              class="search-input hidden"
+              id="search-input"
+              type="text"
+              placeholder="Where Can We Take You Today?"
+              autocomplete="on"
+            >
+            </input>
+            <i class="fas fa-search-location search" id="search"></i>
+          </div>
+        </section>
     </section>
-
-    <table >
-      <tr id="table-heading" class="table-heading"></tr>
-      <div class="result-container">
-      <tr id="table-value" class="table-value"></tr>
-    </div>
-    </table>
-
+    <section>
+      <table >
+        <tr id="table-heading" class="table-heading"></tr>
+        <div class="result-container">
+          <tr id="table-value" class="table-value"></tr>
+        </div>
+      </table>   
+    </section>
   </body>
   <script
     src="https://code.jquery.com/jquery-3.4.1.min.js"
